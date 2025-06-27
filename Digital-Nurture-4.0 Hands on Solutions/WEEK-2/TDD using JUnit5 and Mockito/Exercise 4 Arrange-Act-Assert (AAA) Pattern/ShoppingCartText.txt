@@ -1,0 +1,66 @@
+package junitdemo;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ShoppingCartTest {
+
+    private ShoppingCart cart;
+
+    @Before
+    public void setUp() {
+        cart = new ShoppingCart();
+        System.out.println("Setup: New cart created");
+    }
+
+    
+    @After
+    public void tearDown() {
+        cart.clearCart();
+        System.out.println("Teardown: Cart cleared\n");
+    }
+
+   
+    @Test
+    public void testAddItem() {
+        // Arrange
+        String item = "Apple";
+
+        // Act
+        cart.addItem(item);
+
+        // Assert
+        assertEquals(1, cart.getItemCount());
+    }
+
+    
+    @Test
+    public void testRemoveItem() {
+        // Arrange
+        cart.addItem("Banana");
+
+        // Act
+        boolean removed = cart.removeItem("Banana");
+
+        // Assert
+        assertTrue(removed);
+        assertEquals(0, cart.getItemCount());
+    }
+
+ 
+    @Test
+    public void testRemoveNonExistingItem() {
+        // Arrange
+        cart.addItem("Orange");
+
+        // Act
+        boolean removed = cart.removeItem("Mango");
+
+        // Assert
+        assertFalse(removed);
+        assertEquals(1, cart.getItemCount());
+    }
+}

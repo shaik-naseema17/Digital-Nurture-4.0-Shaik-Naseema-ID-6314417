@@ -21,9 +21,9 @@ public class FinancialForecast {
 
     // Main method to test forecasting
     public static void main(String[] args) {
-        double presentValue = 1000.0; 
-        double growthRate = 0.05; 
-        int years = 10; 
+        double presentValue = 1000.0;
+        double growthRate = 0.05;
+        int years = 10;
 
         // Using plain recursion
         double futureValueRecursive = recursiveForecast(presentValue, growthRate, years);

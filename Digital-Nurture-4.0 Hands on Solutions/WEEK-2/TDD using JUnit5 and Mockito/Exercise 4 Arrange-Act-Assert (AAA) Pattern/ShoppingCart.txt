@@ -1,0 +1,29 @@
+public package junitdemo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShoppingCart {
+    private List<String> items;
+
+    public ShoppingCart() {
+        items = new ArrayList<>();
+    }
+
+    public void addItem(String item) {
+        items.add(item);
+    }
+
+    public boolean removeItem(String item) {
+        return items.remove(item);
+    }
+
+    public int getItemCount() {
+        return items.size();
+    }
+
+    public void clearCart() {
+        items.clear();
+    }
+}
+

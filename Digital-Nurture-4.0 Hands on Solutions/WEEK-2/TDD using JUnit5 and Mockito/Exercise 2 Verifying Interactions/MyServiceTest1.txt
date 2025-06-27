@@ -1,0 +1,21 @@
+package junitdemo;
+
+import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+public class MyServiceTest1 {
+
+    @Test
+    public void testVerifyInteraction() {
+        // Step 1: Create a mock
+        ExternalApi mockApi = Mockito.mock(ExternalApi.class);
+
+        // Step 2: Use the service
+        MyService service = new MyService(mockApi);
+        service.fetchData();
+
+        // Step 3: Verify the method was called
+        verify(mockApi).getData();  // If this method wasn't called, the test will fail
+    }
+}
