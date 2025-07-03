@@ -1,0 +1,21 @@
+1.What Happens After You Run This?
+When you right-click your Maven project → Maven → Update Project:
+
+It downloads the Spring libraries to the local repo (.m2)
+
+Sets up correct Java version and build plugins
+
+You’re ready to write Spring-based code (like BookService, MainApp, etc.)
+
+2.Output and Result
+It’s about project setup.
+
+But you're now ready to:
+
+Autowire components
+
+Use Spring MVC controllers
+
+Run Spring contexts
+
+Add unit tests and build your app
